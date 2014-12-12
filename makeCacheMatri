@@ -1,15 +1,14 @@
-makeCacheMatri<- function(x = numeric()) {
+makeCacheMatri<- function(x = matrix()) {
         m <- NULL
         set <- function(y) {
                 x <<- y
                 m <<- NULL
         }
         get <- function() x
-        setmean <- function(mean) m <<- mean
-        getmean <- function() m
+        setinv <- function(solve) m <<- solve
+        getinv <- function() m
         list(set = set, get = get,
-             setmean = setmean,
-             getmean = getmean)
+             setinv = setinv,
+             getinv = getinv)
 } 
-   
 
